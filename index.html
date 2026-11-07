@@ -3,215 +3,375 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tài Liệu Báo Cáo Tổng Kết Năm Học</title>
+    <title>Tài Liệu Báo Cáo Tổng Kết - Khoa YTCC</title>
     
     <!-- Open Graph tags for social preview -->
-    <meta property="og:title" content="Báo Cáo Tổng Kết Năm Học - Khoa YTCC">
-    <meta property="og:description" content="Tài liệu phục vụ Hội nghị viên chức Khoa YTCC - Xem trực tuyến hoặc tải về file PDF.">
+    <meta property="og:title" content="Báo Cáo Tổng Kết - Khoa YTCC">
+    <meta property="og:description" content="Tài liệu chính thức phục vụ Hội nghị viên chức - Khoa Y Tế Công Cộng">
     <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --primary: #1a56db;
-            --primary-hover: #1e429f;
-            --secondary: #0e9f6e;
-            --secondary-hover: #057a55;
-            --bg-color: #f3f4f6;
+            --primary-navy: #0f2b48;
+            --secondary-blue: #1b4b72;
+            --accent-gold: #c59b27;
+            --accent-gold-light: #fdf8eb;
+            --bg-page: #edf2f7;
             --card-bg: #ffffff;
-            --text-main: #1f2a37;
-            --text-sub: #4b5563;
+            --text-title: #0f172a;
+            --text-body: #334155;
+            --text-muted: #64748b;
+            --border-color: #cbd5e1;
+            --btn-blue: #0f4c81;
+            --btn-blue-hover: #0b3860;
+            --btn-green: #1b6b50;
+            --btn-green-hover: #134e3a;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
+            background-color: var(--bg-page);
+            color: var(--text-body);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 16px;
+            padding: 20px 16px;
         }
 
-        .container {
+        .paper-card {
             width: 100%;
-            max-width: 480px;
+            max-width: 520px;
             background: var(--card-bg);
-            border-radius: 16px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.05);
             overflow: hidden;
+            border-top: 5px solid var(--primary-navy);
+        }
+
+        /* Phần Header Cơ Quan Hành Chính */
+        .header-office {
+            padding: 28px 24px 20px;
             text-align: center;
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
         }
 
-        .header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            padding: 32px 24px;
-        }
-
-        .badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(4px);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 13px;
+        .org-parent {
+            font-size: 11.5px;
             font-weight: 600;
+            color: var(--text-muted);
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .org-school {
+            font-size: 12.5px;
+            font-weight: 700;
+            color: var(--secondary-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            line-height: 1.4;
+        }
+
+        .org-line {
+            width: 80px;
+            height: 1.5px;
+            background-color: var(--accent-gold);
+            margin: 10px auto 8px;
+        }
+
+        .org-unit {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary-navy);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Khối Tiêu Đề Văn Bản */
+        .title-block {
+            padding: 24px 24px 16px;
+            text-align: center;
+            background-color: #f8fafc;
+        }
+
+        .badge-meeting {
+            display: inline-block;
+            background-color: var(--accent-gold-light);
+            color: #8c6b0d;
+            border: 1px solid #ecd99f;
+            padding: 4px 14px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
             letter-spacing: 0.5px;
             text-transform: uppercase;
             margin-bottom: 12px;
         }
 
-        .header h1 {
-            font-size: 20px;
-            font-weight: 700;
-            line-height: 1.4;
-            margin-bottom: 8px;
+        .main-title {
+            font-size: 19px;
+            font-weight: 800;
+            color: var(--primary-navy);
+            line-height: 1.35;
             text-transform: uppercase;
+            margin-bottom: 6px;
         }
 
-        .header p {
-            font-size: 14px;
-            color: #e0e7ff;
-            opacity: 0.95;
-            line-height: 1.5;
+        .sub-title {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            font-weight: 500;
         }
 
-        .content {
-            padding: 28px 20px 32px;
+        /* Khối Thông Báo / Hướng Dẫn */
+        .content-body {
+            padding: 24px;
         }
 
-        .instruction {
-            font-size: 14px;
-            color: var(--text-sub);
-            margin-bottom: 24px;
+        .notice-bar {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            background: #f1f5f9;
+            border-left: 3px solid var(--secondary-blue);
+            padding: 10px 14px;
+            border-radius: 4px;
+            margin-bottom: 22px;
+            font-size: 13px;
+            color: #475569;
+            line-height: 1.45;
         }
 
-        .btn-group {
+        .notice-icon {
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            margin-top: 1px;
+            fill: var(--secondary-blue);
+        }
+
+        /* Danh Sách Nút Bấm Công Sở */
+        .actions-list {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 14px;
         }
 
-        .btn {
+        .btn-office {
             display: flex;
             align-items: center;
-            justify-content: flex-start;
-            text-align: left;
-            padding: 16px 20px;
-            border-radius: 12px;
             text-decoration: none;
-            color: white;
-            font-weight: 600;
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 14px 18px;
+            border-radius: 6px;
+            transition: all 0.2s ease-in-out;
+            border: 1px solid transparent;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            position: relative;
         }
 
-        .btn:active {
-            transform: scale(0.98);
+        .btn-office:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
         }
 
-        .btn-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.2);
+        .btn-office:active {
+            transform: translateY(0);
+        }
+
+        .btn-icon-wrapper {
+            width: 42px;
+            height: 42px;
+            border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 16px;
+            margin-right: 14px;
             flex-shrink: 0;
+            background: rgba(255, 255, 255, 0.15);
         }
 
-        .btn-icon svg {
-            width: 24px;
-            height: 24px;
-            fill: white;
+        .btn-icon-wrapper svg {
+            width: 22px;
+            height: 22px;
+            fill: #ffffff;
         }
 
-        .btn-text h3 {
-            font-size: 15px;
+        .btn-content {
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        .btn-title-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2px;
+        }
+
+        .btn-title {
+            color: #ffffff;
+            font-size: 14.5px;
             font-weight: 700;
-            margin-bottom: 3px;
+            letter-spacing: 0.2px;
+            text-transform: uppercase;
         }
 
-        .btn-text p {
+        .btn-arrow {
+            width: 16px;
+            height: 16px;
+            fill: rgba(255, 255, 255, 0.7);
+            margin-left: 8px;
+            flex-shrink: 0;
+            transition: transform 0.2s;
+        }
+
+        .btn-office:hover .btn-arrow {
+            transform: translateX(3px);
+            fill: #ffffff;
+        }
+
+        .btn-desc {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 12.5px;
+            line-height: 1.35;
+            font-weight: 400;
+        }
+
+        /* Màu Sắc Chuẩn Văn Phòng */
+        .btn-portal {
+            background-color: var(--btn-blue);
+            border-color: #0b3860;
+        }
+
+        .btn-portal:hover {
+            background-color: var(--btn-blue-hover);
+        }
+
+        .btn-doc {
+            background-color: var(--btn-green);
+            border-color: #134e3a;
+        }
+
+        .btn-doc:hover {
+            background-color: var(--btn-green-hover);
+        }
+
+        /* Chân Trang Hành Chính */
+        .footer-office {
+            background-color: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            padding: 16px 20px;
+            text-align: center;
+        }
+
+        .footer-office p {
             font-size: 12px;
-            opacity: 0.9;
-            font-weight: normal;
+            color: var(--text-muted);
+            line-height: 1.5;
         }
 
-        .btn-web {
-            background-color: var(--primary);
+        .footer-secure {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 11.5px;
+            color: #15803d;
+            font-weight: 600;
+            margin-top: 4px;
         }
 
-        .btn-web:hover {
-            background-color: var(--primary-hover);
-        }
-
-        .btn-drive {
-            background-color: var(--secondary);
-        }
-
-        .btn-drive:hover {
-            background-color: var(--secondary-hover);
-        }
-
-        .footer {
-            border-top: 1px solid #f3f4f6;
-            padding: 16px;
-            font-size: 12px;
-            color: #9ca3af;
+        .footer-secure svg {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <span class="badge">Hội Nghị Viên Chức</span>
-            <h1>Báo Cáo Tổng Kết Năm Học</h1>
-            <p>Khoa Y Tế Công Cộng (YTCC)<br>Phân hiệu Trường Cán bộ Quản lý NN & PTNT II</p>
-        </div>
+    <div class="paper-card">
+        <!-- Đầu Trang Cơ Quan Hành Chính -->
+        <header class="header-office">
+            <div class="org-parent">Phân hiệu Trường Cán bộ Quản lý NN & PTNT II</div>
+            <div class="org-school">Thành phố Hồ Chí Minh</div>
+            <div class="org-line"></div>
+            <div class="org-unit">Khoa Y Tế Công Cộng</div>
+        </header>
 
-        <div class="content">
-            <p class="instruction">Vui lòng chọn tài liệu bạn muốn truy cập bên dưới:</p>
-            
-            <div class="btn-group">
-                <!-- Nút 1: Link Website Trường -->
-                <a href="http://fphhcm.edu.vn/bao-cao-tong-ket-nam-hoc/" class="btn btn-web" target="_blank" rel="noopener noreferrer">
-                    <div class="btn-icon">
-                        <!-- Icon Website -->
-                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        <!-- Tiêu Đề Văn Bản / Hội Nghị -->
+        <section class="title-block">
+            <span class="badge-meeting">Hội Nghị Viên Chức - Người Lao Động</span>
+            <h1 class="main-title">Tài Liệu Báo Cáo Tổng Kết</h1>
+            <p class="sub-title">Công đoàn bộ phận Khoa Y tế Công cộng</p>
+        </section>
+
+        <!-- Khối Nút Bấm Lựa Chọn Tài Liệu -->
+        <main class="content-body">
+            <div class="notice-bar">
+                <svg class="notice-icon" viewBox="0 0 20 20">
+                    <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm.75 12h-1.5v-1.5h1.5V14zm0-3h-1.5V6h1.5v5z"/>
+                </svg>
+                <span>Kính mời Quý đại biểu và viên chức lựa chọn phương thức tiếp cận tài liệu phù hợp:</span>
+            </div>
+
+            <div class="actions-list">
+                <!-- Nút 1: Xem trên Website nhà trường -->
+                <a href="http://fphhcm.edu.vn/bao-cao-tong-ket-nam-hoc/" class="btn-office btn-portal" target="_blank" rel="noopener noreferrer">
+                    <div class="btn-icon-wrapper">
+                        <!-- Icon Cổng thông tin / Web -->
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                        </svg>
                     </div>
-                    <div class="btn-text">
-                        <h3>Xem Trên Website Nhà Trường</h3>
-                        <p>Xem bài viết & hình ảnh tổng kết chính thức</p>
+                    <div class="btn-content">
+                        <div class="btn-title-row">
+                            <span class="btn-title">1. Cổng Thông Tin Điện Tử</span>
+                            <svg class="btn-arrow" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                        </div>
+                        <p class="btn-desc">Xem toàn văn bài viết báo cáo trực tuyến trên website trường</p>
                     </div>
                 </a>
 
-                <!-- Nút 2: Link Google Drive PDF -->
-                <a href="https://drive.google.com/file/d/1UUFp_MAQClSWqIdIeDgOJEvAWpBoKu_Y/view?usp=drive_link" class="btn btn-drive" target="_blank" rel="noopener noreferrer">
-                    <div class="btn-icon">
-                        <!-- Icon Tải tài liệu PDF -->
-                        <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                <!-- Nút 2: Tải File Báo Cáo PDF Google Drive -->
+                <a href="https://drive.google.com/file/d/1UUFp_MAQClSWqIdIeDgOJEvAWpBoKu_Y/view?usp=drive_link" class="btn-office btn-doc" target="_blank" rel="noopener noreferrer">
+                    <div class="btn-icon-wrapper">
+                        <!-- Icon Văn bản / Tải file PDF -->
+                        <svg viewBox="0 0 24 24">
+                            <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+                        </svg>
                     </div>
-                    <div class="btn-text">
-                        <h3>Tải Toàn Văn Báo Cáo (PDF)</h3>
-                        <p>Tải tệp chi tiết lưu trữ trên Google Drive</p>
+                    <div class="btn-content">
+                        <div class="btn-title-row">
+                            <span class="btn-title">2. Tải Bản Báo Cáo (File PDF)</span>
+                            <svg class="btn-arrow" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                        </div>
+                        <p class="btn-desc">Tải tệp tin PDF lưu hành từ hệ thống lưu trữ Google Drive</p>
                     </div>
                 </a>
             </div>
-        </div>
+        </main>
 
-        <div class="footer">
-            Tài liệu phục vụ Hội nghị viên chức
-        </div>
+        <!-- Chân Trang Hành Chính -->
+        <footer class="footer-office">
+            <p>Tài liệu phục vụ Hội nghị viên chức - Khoa Y tế Công cộng</p>
+            <div class="footer-secure">
+                <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 1.944A11.954 11.954 0 012.166 5C2.056 5.649 2 6.319 2 7c0 5.225 3.34 9.67 8 11.317C14.66 16.67 18 12.225 18 7c0-.682-.057-1.35-.166-2.001A11.954 11.954 0 0110 1.944zM11 14a1 1 0 11-2 0 1 1 0 012 0zm0-7a1 1 0 10-2 0v3a1 1 0 102 0V7z" clip-rule="evenodd"/></svg>
+                <span>Hệ thống phân phối văn bản điện tử</span>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
